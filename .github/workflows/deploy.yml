@@ -23,6 +23,9 @@ concurrency:
 jobs:
   build:
     name: Build guides
+    permissions:
+      contents: read
+      pages: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Remix
@@ -53,10 +56,15 @@ jobs:
         working-directory: remix
         run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v6
+
       - name: Prerender guides
         working-directory: remix
         env:
           GITHUB_SHA: ${{ steps.remix.outputs.sha }}
+          REMIX_GUIDES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
         run: pnpm --filter remix-guides run prerender
 
       - name: Upload GitHub Pages artifact
@@ -75,9 +83,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
