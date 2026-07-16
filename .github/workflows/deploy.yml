@@ -10,7 +10,7 @@ on:
       ref:
         description: Remix branch, tag, or commit to deploy
         required: true
-        default: brooks/guides-markdown-chapters
+        default: main
         type: string
 
 permissions:
@@ -33,7 +33,7 @@ jobs:
         with:
           repository: remix-run/remix
           path: remix
-          ref: ${{ github.event.client_payload.ref || inputs.ref || 'brooks/guides-markdown-chapters' }}
+          ref: ${{ github.event.client_payload.ref || inputs.ref || 'main' }}
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v6

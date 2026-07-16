@@ -1,6 +1,6 @@
 # Remix Guides
 
-This repository builds and deploys the [Remix](https://github.com/remix-run/remix) guides to GitHub Pages. The guide source and static-site generator live in the Remix monorepo under [`guides/`](https://github.com/remix-run/remix/tree/brooks/guides-markdown-chapters/guides).
+This repository builds and deploys the [Remix](https://github.com/remix-run/remix) guides to GitHub Pages. The guide source and static-site generator live in the Remix monorepo under [`guides/`](https://github.com/remix-run/remix/tree/main/guides).
 
 ## Deployment
 
@@ -12,4 +12,4 @@ Deployments run when:
 - The **Deploy Remix Guides** workflow is run manually. Its `ref` input accepts a Remix branch, tag, or commit.
 - This repository receives an `update-guides` repository dispatch. The optional `ref` client payload selects the Remix source ref.
 
-Until the guides PR merges, deployments default to `brooks/guides-markdown-chapters`. After it merges, the workflow default should be changed to `main`.
+Deployments default to the Remix `main` branch.
