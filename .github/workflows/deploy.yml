@@ -68,7 +68,7 @@ jobs:
         run: pnpm --filter remix-guides run prerender
 
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: remix/guides/build/site
 
@@ -85,4 +85,4 @@ jobs:
     steps:
       - name: Deploy GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
