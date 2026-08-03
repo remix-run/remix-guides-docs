@@ -1,6 +1,6 @@
 # Remix Guides
 
-This repository builds and deploys the [Remix](https://github.com/remix-run/remix) guides to GitHub Pages. The guide source and static-site generator live in the Remix monorepo under [`guides/`](https://github.com/remix-run/remix/tree/main/guides).
+This repository builds and deploys the [Remix](https://github.com/remix-run/remix) guides to GitHub Pages. The guide source and static-site generator live in the Remix monorepo under [`docs/guides/`](https://github.com/remix-run/remix/tree/main/docs/guides).
 
 ## Deployment
 
