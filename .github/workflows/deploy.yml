@@ -71,6 +71,8 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: remix/docs/guides/build/site
+          # Prerendered npm assets live under `assets/npm/.pnpm/`
+          include-hidden-files: true
 
   deploy:
     name: Deploy guides
